@@ -1,0 +1,14 @@
+<section class="container">
+    <hr>
+    <form class="form-group" action="{% url 'forum:add_post' discusion.id %}" method="post">
+        {% csrf_token %}
+        <div>
+            <!-- <textarea id="content"></textarea> -->
+            <label class="form-label" for="validationTextarea">Commenter</label>
+            <textarea class="form-control is-invalid" id="validationTextarea" placeholder="Required example textarea"
+                required name="content"></textarea>
+            <br>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</section>

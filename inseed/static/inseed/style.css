@@ -1,0 +1,36 @@
+.inseed-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+
+.menu {
+    display: flex;
+    gap: 2rem;
+    height: 100vh;
+    width: 100%;
+    margin-top: 10px;
+    background-color: antiquewhite;
+  }
+  
+  .article {
+    flex: 9;
+    background-color: rgb(10, 82, 124);
+  }
+  
+  .aside {
+    flex: 3;
+    background-color: #6b6bac;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+  }
+  
+
+  @media only screen and (max-width: 600px) {
+    .menu {
+      flex-direction: column;
+    }
+  }

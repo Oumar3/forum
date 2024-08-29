@@ -1,0 +1,49 @@
+{% extends 'index.html' %}
+{% block content%}
+
+
+<section class="content">
+
+    <table class="table">
+        <h2>Les Produits</h2>
+
+        {% if messages %}
+        <div>
+            {% for message in messages %}
+            <p style="background-color: rgba(14, 163, 46, 0.589);">
+                {% if message.tags %} <span class="{{ message.tags }}">{{ message }}</span> {% endif %}
+            </p>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Designation</th>
+                <th>Prix</th>
+                <th>Description</th>
+                <th>Action</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.description }}</td>
+                <td>
+                    <a href="{% url 'products:delete_products' product.id %}">supprimer</a>
+                    <a href="{% url 'products:update_products' product.id %}">update</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5">Aucun produit trouvé.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+{% endblock %}

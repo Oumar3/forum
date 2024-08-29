@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<section class="container my-5">
+    <!-- Titre et Contenu de la Discussion -->
+    <h1>{{ discusion.title }}</h1>
+    <p>{{ discusion.content }}</p>
+    {% include 'forum/add_post.html'%}
+    <hr />
+    <!-- Liste des Commentaires Existants -->
+    <div class="comments-section">
+        <ul class="list-group list-group-flush">
+            {% for post in posts %}
+            <li class="list-group-item bg-light mt-2 shadow-sm">
+                <h4><strong>{{ post.created_by.username }}</strong></h4>
+                <p>{{ post.content }}</p>
+                </span>
+                <span class="d-block justify-content-espace-between ">Le {{ post.created_at|date:"d/m/Y" }}
+                </span>
+            </li>
+            {% empty %}
+            <div>Aucun forum</div>
+            {% endfor %}
+        </ul>
+
+    </div>
+
+    <!-- Formulaire pour Ajouter un Commentaire -->
+
+</section>
+{% endblock %}

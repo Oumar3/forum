@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<section class="container my-5">
+    <h1>Les Sujet </h1>
+    <div class="card" style="width: 90%;">
+        <ul class="list-group list-group-flush">
+            {% for discusion in discusions %}
+            <li class="list-group-item">
+                <a class="text-decoration-none" href="{% url 'forum:post_list' discusion.id %}">
+                    <h4> {{ discusion.title }}</h4>
+                    <span class="d-block justify-content-espace-between ">Pulier par : {{ forum.created_by.username }}
+                    </span>
+                    <span class="d-block justify-content-espace-between ">Le {{ forum.created_at|date:"d/m/Y" }}
+                    </span>
+                </a>
+            </li>
+            {% empty %}
+            <div>Aucun forum</div>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+{% endblock %}
