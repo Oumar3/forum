@@ -26,6 +26,7 @@ urlpatterns = [
     path('List_product/',include('List_product.urls')),
     path('inseed/',include('inseed.urls')),
     path('forum/', include('forum.urls')),
+    path('inseed_apropos/',include('inseed_apropos.urls')),
     
 ]
 # if settings.DEBUG:

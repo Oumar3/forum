@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'List_product',
     'inseed',
     'forum',
+    'inseed_apropos',
 ]
 
 MIDDLEWARE = [
