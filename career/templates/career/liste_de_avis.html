@@ -4,8 +4,9 @@
         <thead>
             <tr>
                 <th>INTITULE DE L'AVIS</th>
-                <th>Date limite</th>
+                <th>DATE LIMITE</th>
                 <th>TDR</th>
+
             </tr>
         </thead>
         <tbody>
@@ -13,6 +14,8 @@
             <tr>
                 <td>{{i.title}}</td>
                 <td>{{i.date_line}}</td>
+                <td><a href="{{ i.tdr.url }}">{{ i.tdr.name}} {{ i.tdr.url }}</a></td>
+                <td><a href="{{ i.tdr.url }}">{{ i.tdr.name}} {{ i.tdr.url }}</a></td>
             </tr>
             {% endfor %}
         </tbody>

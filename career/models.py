@@ -9,6 +9,7 @@ class Avis(models.Model):
     img = models.FileField(upload_to='media/',null=True,blank=True)
     tdr = models.FileField(upload_to='tdr/',null=True,blank=True)
     body = CKEditor5Field(config_name='extends')
+    status = models.CharField(max_length=100, default="Encour")
     date_line = models.CharField(max_length=100)
 
 class Candidat(models.Model):
