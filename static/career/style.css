@@ -1,0 +1,69 @@
+
+.navbar-nav .nav-link:hover {
+    background-color: #ffd10580; /* Couleur de fond au survol */
+    border-radius: 5px; /* Optionnel : ajouter des coins arrondis */
+}
+
+
+
+@media (max-width: 960px) {
+    .navbar-brand img{
+        width: 80px;
+        height: 40px;
+    }
+
+}
+
+/* Media query for devices with a max width of 768px (tablets) */
+@media (max-width: 1200px) {
+    .navbar-career a{
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+@media (max-width: 860px) {
+    .header-career .navbar-career{
+        height: 100vh;
+        width: 100%;
+        z-index: 100;
+        background-color: aliceblue;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#hero {
+    width: 100%;
+    height: 80vh;
+    background: url("/static/career/bani.png") no-repeat center bottom;
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+  }
+
+  
+  @media (min-width: 1024px) {
+    #hero {
+      background-attachment: fixed;
+    }
+  }
+  
+  @media (max-width: 1020px) {
+    #hero .container {
+      margin-top: 50px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    #hero {
+      height: 50vh;
+    }
+  }

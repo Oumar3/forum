@@ -9,8 +9,8 @@
     <!-- <link rel="stylesheet" href="/products/static/style.css"> -->
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <link rel="stylesheet" href="{% static 'inseed/style.css' %}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-        crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
 <!-- <style>
@@ -34,7 +34,15 @@
                     <li class="link"><a href="{% url 'products:add_products' %}">Add product</a></li>
                     <li class="link"><a href="{% url 'inseed:inseed' %}">inseed</a></li>
                     <li class="link"><a href="{% url 'forum:forum_list' %}">forum_list</a></li>
-                    <li class="link"><a href="{% url 'inseed_apropos:apropos' %}">A propos Inseed</a></li>
+                    <li><a href="{% url 'career:career' %}">Career</a></li>
+
+                    <li class="link" style="position: relative;">
+                        <a href="">apropos</a>
+                        <ul style="position: absolute; right: 0; top: 50px; background-color: blue; width: 300px;">
+                            <li><a href="{% url 'inseed_apropos:apropos' %}">Connaitre l'inseed</a></li>
+                            <li><a href="{% url 'inseed_apropos:organigrame' %}">Organisation et Fonctionnement</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -43,6 +51,10 @@
     {% block content%}
 
     {% endblock %}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 
     <script type="text/javascript">
         function googleTranslateElementInit() {
@@ -56,10 +68,7 @@
             );
         }
     </script>
-    <script type="text/javascript"
-        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-        crossorigin="anonymous"></script>
+
 </body>
 
 </html>

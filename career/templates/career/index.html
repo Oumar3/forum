@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'career/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #242464;">
+        <a class="navbar-brand mx-5" href="#"><img src="{% static 'career/logo.gif' %}" width="90" height="70"
+                alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item active">
+                    <a class="nav-link text-white hover-shadow" style="font-size: 20px;"
+                        href="#ACCUEIL{% url 'career:career' %}">ACCUEIL
+                        </span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" style="font-size: 20px;" href="#AVIS">AVIS DE RECRUTEMENT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" style="font-size: 20px;" href="#STAGE">DEMANDE DE STAGE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" style="font-size: 20px;" href="#CONTACT">CONTACT</a>
+                </li>
+                <!-- <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li> -->
+            </ul>
+
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section id="hero" class="d-flex align-items-center">
+
+        <h5 data-aos="fade-up" data-aos-duration="2000" class="container shadow-2"
+            style="background-color: #04041fab; color: #fff;">
+            Bienvenue sur le Portail de Recrutement de l'INSEED Tchad !
+
+            Nous sommes ravis de vous accueillir sur notre plateforme dédiée aux opportunités professionnelles et de
+            stage.
+        </h5>
+    </section>
+
+    <section id="AVIS" class="container">
+        <div class="my-5">
+            <h2>LISTE DES AVIS DE RECRUTEMENT</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>INTITULE DE L'AVIS</th>
+                        <th>Date limite</th>
+                        <th>TDR</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in annonce %}
+                    <tr>
+                        <td>{{i.title}}</td>
+                        <td>{{i.date_line}}</td>
+                        <td><a href="">{{i.tdr}}</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+
+    <section id="STAGE" class="container">
+        <h1>DEMANDE DE STAGE</h1>
+    </section>
+
+    <section id="CONTACT" class="container">
+        <h1>CONTACT</h1>
+    </section>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <!-- JavaScript de Bootstrap -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialiser AOS
+        AOS.init();
+    </script>
+</body>
+
+</html>

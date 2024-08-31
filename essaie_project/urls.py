@@ -22,13 +22,18 @@ import os
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('tinymce/', include('tinymce.urls')),
     path('',include('products.urls')),
     path('List_product/',include('List_product.urls')),
     path('inseed/',include('inseed.urls')),
     path('forum/', include('forum.urls')),
     path('inseed_apropos/',include('inseed_apropos.urls')),
+    path('careers/',include('career.urls')),
+    path("ckeditor5/", include('django_ckeditor_5.urls')),
     
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
 # if settings.DEBUG:
 #     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 #     urlpatterns +=  static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

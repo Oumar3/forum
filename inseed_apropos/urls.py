@@ -6,4 +6,5 @@ from . import views
 
 urlpatterns = [
     path("", views.apropos, name="apropos"),
+    path('organigrame/', views.organigrame, name="organigrame"),
 ]

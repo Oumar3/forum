@@ -1,0 +1,20 @@
+<div class="my-5">
+    <h2>LISTE DES AVIS DE RECRUTEMENT</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>INTITULE DE L'AVIS</th>
+                <th>Date limite</th>
+                <th>TDR</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in annonce %}
+            <tr>
+                <td>{{i.title}}</td>
+                <td>{{i.date_line}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
