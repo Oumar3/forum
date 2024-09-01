@@ -1,3 +1,49 @@
-<section class="container">
+{% extends 'base.html' %}
+{% load static %}
 
+
+{% block content %}
+
+<section class="container">
+    <form method="post" action="{% url 'career:postuler' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="nom">Nom :</label>
+            <input type="text" class="form-control" id="nom" name="nom">
+        </div>
+        <div class="form-group">
+            <label for="prenom">Prenom :</label>
+            <input type="text" class="form-control" id="prenom" name="prenom">
+        </div>
+        <div class="form-group">
+            <label for="email">Email :</label>
+            <input type="email" class="form-control" id="email" name="email">
+        </div>
+        <div class="form-group">
+            <label for="telephone">Telephone :</label>
+            <input type="text" class="form-control" id="telephone" name="telephone">
+        </div>
+        <div class="form-group">
+            <label for="cv">CV :</label>
+            <input type="file" class="form-control" id="cv" name="cv">
+        </div>
+        <div class="form-group">
+            <label for="lettre_de_motivation">Lettre de motivation :</label>
+            <input type="file" class="form-control" id="lettre_de_motivation" name="lettre_de_motivation">
+        </div>
+        <div class="form-group">
+            <label for="experience_professionnelle">Experience professionnelle :</label>
+            <input type="text" class="form-control" id="experience_professionnelle" name="experience_professionnelle">
+        </div>
+        <div class="form-group">
+            <label for="niveau_d_etude">Niveau d'etude :</label>
+            <input type="text" class="form-control" id="niveau_d_etude" name="niveau_d_etude">
+        </div>
+        <div class="form-group">
+            <label for="specialite">Specialite :</label>
+            <input type="text" class="form-control" id="specialite" name="specialite">
+        </div>
+        <button type="submit" class="btn btn-primary">Envoyer</button>
 </section>
+
+{% endblock %}

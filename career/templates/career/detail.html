@@ -12,7 +12,8 @@
     <br><br>
     <div class="row">
         <div class="col-6">
-            <a href="" class="btn btn-primary btn-block">Postuler</a>
+            <a href="{% if request.user.is_authenticated %}{% url 'career:postuler' %}{% else %}{% url 'career:login' %}{% endif %}"
+                class="btn btn-primary btn-block">Postuler</a>
         </div>
         <div class="col-6">
             <a href="{{detail_avis.tdr.url}}" class="btn btn-secondary btn-block" download>Telecharger le TDR</a>
