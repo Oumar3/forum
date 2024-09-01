@@ -5,8 +5,6 @@ from django_ckeditor_5.fields import CKEditor5Field
 # Create your models here.
 class Avis(models.Model):
     title = models.CharField(max_length=200)
-    intro = models.CharField(max_length=200)
-    img = models.FileField(upload_to='media/',null=True,blank=True)
     tdr = models.FileField(upload_to='tdr/',null=True,blank=True)
     body = CKEditor5Field(config_name='extends')
     status = models.CharField(max_length=100, default="Encour")

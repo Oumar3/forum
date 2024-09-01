@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<section class="container my-5">
+    <h4>{{detail_avis.title}}</h4>
+    <hr>
+    <p>{{detail_avis.body|safe}}</p>
+    <!-- <img src="{{detail_avis.img.url}}" alt="" class="img-fluid"> -->
+    <br><br>
+    <div class="row">
+        <div class="col-6">
+            <a href="" class="btn btn-primary btn-block">Postuler</a>
+        </div>
+        <div class="col-6">
+            <a href="{{detail_avis.tdr.url}}" class="btn btn-secondary btn-block" download>Telecharger le TDR</a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

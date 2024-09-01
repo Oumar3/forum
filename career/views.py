@@ -8,3 +8,7 @@ def home(request):
 
 # def avis_recurtement(request):
 #     return render(request, 'career/liste_de_avis.html',{'annonce': annonce})
+
+def detail(request,id):
+    detail_avis = Avis.objects.get(id=id)
+    return render(request,'career/detail.html',{'detail_avis':detail_avis})
