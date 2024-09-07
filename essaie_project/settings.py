@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'channels',
     'crispy_forms',
     'products',
     'List_product',
@@ -48,6 +49,8 @@ INSTALLED_APPS = [
     'inseed_apropos',
     'career',
     'django_ckeditor_5',
+    'intranet',
+    'user_manage',
 
 ]
 
@@ -91,6 +94,11 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+AUTHENTICATION_BACKENDS = ( 
+    'career.authentication.EmailAuthBackend',
+    'django.contrib.auth.backends.ModelBackend',
+    )
 
 
 # Password validation

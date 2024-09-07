@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Répondre au message de {{ message_original.auteur.username }}</h2>
+<p>{{ message_original.contenu }}</p>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Répondre</button>
+</form>
+{% endblock %}
