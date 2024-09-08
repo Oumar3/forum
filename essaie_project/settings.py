@@ -51,6 +51,8 @@ INSTALLED_APPS = [
     'django_ckeditor_5',
     'intranet',
     'user_manage',
+    'analytique',
+    'ajax_emp',
 
 ]
 

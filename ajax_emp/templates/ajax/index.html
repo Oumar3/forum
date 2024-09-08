@@ -1,0 +1,79 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<section class="container my-5">
+    <div>
+        <form action="#" id="office">
+            {% csrf_token %}
+
+            <h1>Office Form</h1>
+            {{officeForm.as_p}}
+            <button type="submit">Submit Office</button>
+        </form>
+
+        <hr>
+
+        <form action="#" id="employee">
+            {% csrf_token %}
+            <h1>Employee Form</h1>
+            {{employeeForm.as_p}}
+            <button type="submit">Submit Employee</button>
+        </form>
+
+    </div>
+    <div id="result"></div>
+</section>
+{% endblock %}
+{% block scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+    $(document).ready(function () {
+        console.log($(this));
+    });
+    function officeFormSubmit(e) {
+        e.preventDefault()
+        body = {}
+        $(this).serializeArray().forEach(element => {
+            body[element.name] = element.value
+        });
+
+        $.ajax({
+            url: "{% url 'ajax_emp:office' %}",
+            type: 'POST',
+            data: body
+        })
+            .done(function (data) {
+                console.log(data);
+                e.target.reset()
+            })
+            .fail(function () {
+                alert("Something went wrong");
+            })
+    }
+
+    function employeeFormSubmit(e) {
+        e.preventDefault()
+        body = {}
+        $(this).serializeArray().forEach(element => {
+            body[element.name] = element.value
+        });
+
+        $.ajax({
+            url: "{% url 'ajax_emp:employee' %}",
+            type: 'POST',
+            data: body
+        })
+            .done(data => {
+                console.log(data);
+                // e.target.reset()
+            })
+            .fail(() => alert("Something went wrong"))
+    }
+
+    $("#office").submit(officeFormSubmit);
+    $('#employee').submit(employeeFormSubmit)
+</script>
+{% endblock scripts %}

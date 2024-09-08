@@ -15,6 +15,23 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js"
+      integrity="sha512-L0Shl7nXXzIlBSUUPpxrokqq4ojqgZFQczTYlGjzONGTDAcLremjwaWv5A+EDLnxhQzY5xUZPWLOLqYRkY0Cbw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/simple-datatables@latest"
+      type="text/javascript"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
 
   <!-- <style>
@@ -37,7 +54,10 @@
               <a href="{% url 'products:index' %}">Accueil</a>
             </li>
             <li class="link">
-              <a href="{% url 'user_manage:home' %}">user_manage</a>
+              <a href="{% url 'analytique:home' %}">analytique</a>
+            </li>
+            <li class="link">
+              <a href="{% url 'ajax_emp:home' %}">Ajax</a>
             </li>
 
             <li class="link">
@@ -102,5 +122,6 @@
         );
       }
     </script>
+    {% block scripts %} {% endblock scripts %}
   </body>
 </html>

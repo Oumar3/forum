@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Product
 from .forms import ProductForm
 from django.contrib import messages
+from django.http import JsonResponse
 # Create your views here.
 def index(request):
     return render(request, 'index.html')

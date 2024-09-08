@@ -32,6 +32,8 @@ urlpatterns = [
     path("ckeditor5/", include('django_ckeditor_5.urls')),
     path('intranet/',include('intranet.urls')),
     path('user_manage/',include('user_manage.urls')),
+    path('analytique/',include('analytique.urls')),
+    path('ajax_emp/',include('ajax_emp.urls')),
     
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
