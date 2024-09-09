@@ -22,7 +22,6 @@ import os
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('tinymce/', include('tinymce.urls')),
     path('',include('products.urls')),
     path('List_product/',include('List_product.urls')),
     path('inseed/',include('inseed.urls')),
